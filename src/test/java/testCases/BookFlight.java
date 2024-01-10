@@ -30,7 +30,7 @@ public class BookFlight extends BaseClass{
 		FlightBook.toCity.click();
 		Thread.sleep(1000);
 
-		FlightBook.toCityName.sendKeys("Bhubaneswar");
+		FlightBook.toCityName.sendKeys("Bh");
 		Thread.sleep(1000);
 
 		FlightBook.selectToCity.click();

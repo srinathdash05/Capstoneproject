@@ -17,6 +17,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BaseClass {
 	
 	public static WebDriver driver=null;
@@ -36,10 +38,19 @@ public class BaseClass {
 		String browser = properties.getProperty("browser");
 		
 		String url = properties.getProperty("url");
-		if(browser.equalsIgnoreCase("Chrome")) {
-			String driverLocation = properties.getProperty("driver1Location");
+		WebDriverManager.chromedriver().setup();
+		driver= new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", driverLocation);
+		System.setProperty("webdriver.http.factory", "jdk-http-client");
+		driver.get(url);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(3000);
+		/*if(browser.equalsIgnoreCase("Chrome")) {
+			//String driverLocation = properties.getProperty("driver1Location");
+			WebDriverManager.chromedriver().setup();
 			driver= new ChromeDriver();
-			System.setProperty("webdriver.chrome.driver", driverLocation);
+			//System.setProperty("webdriver.chrome.driver", driverLocation);
 			System.setProperty("webdriver.http.factory", "jdk-http-client");
 			driver.get(url);
 			driver.manage().window().maximize();
@@ -57,7 +68,7 @@ public class BaseClass {
 		Thread.sleep(3000);
 		}else {
 			System.out.println("Invalid Entry");
-		}
+		}*/
 		/*driver.findElement(By.id("email")).sendKeys(username);
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.id("submitBTN")).click();
