@@ -9,7 +9,6 @@
       <class name="testCases.LogInTC">
         <methods>
           <include name="flightBooking"/>
-          <include name="landingPage"/>
           <include name="navigateToLandingPage"/>
           <include name="tearDown"/>
           <include name="launchBrowser"/>
