@@ -6,17 +6,10 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCases.LogInTC">
-        <methods>
-          <include name="flightBooking"/>
-          <include name="navigateToLandingPage"/>
-          <include name="tearDown"/>
-          <include name="launchBrowser"/>
-        </methods>
-      </class> <!-- testCases.LogInTC -->
       <class name="testCases.BookFlight">
         <methods>
           <include name="bookFlight"/>
+          <include name="takeScreenShot"/>
           <include name="navigateToLandingPage"/>
           <include name="tearDown"/>
           <include name="launchBrowser"/>

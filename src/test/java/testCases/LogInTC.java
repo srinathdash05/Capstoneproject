@@ -25,9 +25,11 @@ public class LogInTC extends BaseClass {
 		String password = properties.getProperty("password");
 		LogIn.username.sendKeys(username);
 		LogIn.password.sendKeys(password);
+		Thread.sleep(3000);
 		LogIn.LoginButton.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@class='logo p-1 rounded']")));
+		WebElement logo = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@class='logo p-1 rounded']")));
+		//LogIn.cookieHide.click();
 		if(logo.isDisplayed()) {
 			System.out.println("Log in successful");
 			
@@ -36,18 +38,12 @@ public class LogInTC extends BaseClass {
 		}
 		String Title = driver.getTitle();
 		System.out.println(" The title is : " +Title);
+		
+		Thread.sleep(2000);
 	}
 	
-	@Test(priority = 2)
+		
+		
 	
-	public void flightBooking() throws Exception{
-		PageFactory.initElements(driver, FlightBook.class);
-		FlightBook.flight.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//strong[text()='Search for best Flights']")));
-		//System.out.println(text);
-		
-		
-	}
 
 }

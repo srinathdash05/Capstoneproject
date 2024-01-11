@@ -1,5 +1,6 @@
 package testCases;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebElement;
@@ -15,7 +16,7 @@ public class BookFlight extends BaseClass{
 	
 	@Test
 	
-	public void bookFlight() throws InterruptedException {
+	public void bookFlight() throws InterruptedException, IOException {
 		
 		PageFactory.initElements(driver, FlightBook.class);
 		FlightBook.Bookflight.click();
@@ -23,6 +24,7 @@ public class BookFlight extends BaseClass{
 		WebElement clickFromCity = wait.until(ExpectedConditions.elementToBeClickable(FlightBook.fromCity));
 		clickFromCity.click();
 		FlightBook.fromCityName.sendKeys("Bangalore");
+		
 		Thread.sleep(1000);
 		FlightBook.selectFromCity.click();
 		Thread.sleep(1000);
@@ -30,7 +32,7 @@ public class BookFlight extends BaseClass{
 		FlightBook.toCity.click();
 		Thread.sleep(1000);
 
-		FlightBook.toCityName.sendKeys("Bh");
+		FlightBook.toCityName.sendKeys("Bhub");
 		Thread.sleep(1000);
 
 		FlightBook.selectToCity.click();
@@ -57,10 +59,10 @@ public class BookFlight extends BaseClass{
 		FlightBook.searchFlight.click();
 		Thread.sleep(1000);
 
-		WebElement selectFlightType = wait.until(ExpectedConditions.elementToBeClickable(FlightBook.directFlight));
+		/*WebElement selectFlightType = wait.until(ExpectedConditions.elementToBeClickable(FlightBook.directFlight));
 		selectFlightType.click();
 		FlightBook.Indigo.click();
-		FlightBook.SelectFlight.click();
+		FlightBook.SelectFlight.click();*/
 		
 	}
 

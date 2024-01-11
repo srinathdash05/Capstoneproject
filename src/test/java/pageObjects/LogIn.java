@@ -17,5 +17,8 @@ public class LogIn {
 	
 	@FindBy(xpath ="//img[@class='logo p-1 rounded']")
 	public static WebElement LandingPageLogo;
+	
+	@FindBy(xpath="//button[@id='cookie_stop']")
+	public static WebElement cookieHide;
 
 }

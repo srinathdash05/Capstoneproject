@@ -6,8 +6,9 @@
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
-     <class name="testCases.LogInTC"></class>
+     
      <class name="testCases.BookFlight"></class>
+     <class name="testCases.HotelBook"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
