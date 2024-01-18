@@ -134,18 +134,19 @@ public class BaseClass {
 		return base64ScreenshotCode;
 		
 	}
-	public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException {
+	public static void getScreenshot(WebDriver driver, String destination) throws IOException {
 		
 		TakesScreenshot ts = ((TakesScreenshot)driver);
 		File source  =  ts.getScreenshotAs(OutputType.FILE);
-		String destination = System.getProperty("user.dir");
-		destination+="Result1"+".png";
+		//destination = System.getProperty("user.dir");
+		//destination+="Result1"+".png";
 		//System.out.println(destination);
-		File finaldestination = new File(destination);
+		File finaldestination = new File(destination);	
 		FileUtils.copyFile(source, finaldestination);
-		return destination;
+		//return destination;
 		
 	}
+	
 	
 	@AfterMethod
 	public void testFail(ITestResult result) {
