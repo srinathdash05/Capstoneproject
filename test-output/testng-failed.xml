@@ -6,13 +6,24 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCases.BookFlight">
+      <class name="testCases.HotelBook">
         <methods>
-          <include name="bookFlight"/>
-          <include name="takeScreenShot"/>
+          <include name="bookHotel"/>
+          <include name="testFail"/>
           <include name="navigateToLandingPage"/>
           <include name="tearDown"/>
           <include name="launchBrowser"/>
+          <include name="reportGeneration"/>
+        </methods>
+      </class> <!-- testCases.HotelBook -->
+      <class name="testCases.BookFlight">
+        <methods>
+          <include name="testFail"/>
+          <include name="bookFlight"/>
+          <include name="navigateToLandingPage"/>
+          <include name="tearDown"/>
+          <include name="launchBrowser"/>
+          <include name="reportGeneration"/>
         </methods>
       </class> <!-- testCases.BookFlight -->
     </classes>

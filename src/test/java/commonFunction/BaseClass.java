@@ -60,9 +60,10 @@ public class BaseClass {
 		String password = properties.getProperty("password");
 		String driver1Location = properties.getProperty("driver1Location");
 		String url = properties.getProperty("url");
+		WebDriverManager.chromedriver().setup();
 		driver= new ChromeDriver();
-		System.setProperty("webdriver.chrome.driver", driver1Location);
-		System.setProperty("webdriver.http.factory", "jdk-http-client");
+		//System.setProperty("webdriver.chrome.driver", driver1Location);
+		//System.setProperty("webdriver.http.factory", "jdk-http-client");
 		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
